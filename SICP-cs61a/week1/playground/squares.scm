@@ -4,15 +4,15 @@
 ; > (squares '(2 3 4 5))
 ; (4 9 16 25)
 (define (squares wd)
-  (if (endList wd)
-    (square ((first wd)))
-    (squares ((bf wd)))
+  (if (endList? wd)
+    (square (first wd))
+    (squares (bf wd)))
   )
-)
 
 
 (define (square x)
   (* x x))
 
-(define (endList emptyList)
-  (equal? '() emptyList))
+(define (endList? wd)
+  (equal? (first wd) '())
+  )
